@@ -31,4 +31,8 @@ const readAndAppend = (content, file) => {
   });
 };
 
+
+
+// const readAndDelete = ()
+
 module.exports = { readFromFile, writeToFile, readAndAppend };
