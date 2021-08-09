@@ -1,13 +1,14 @@
 const notes = require('express').Router();
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtils');
 const { v4: uuidv4 } = require('uuid');
+const notesDB = require('../db/notes.json')
+const fs = require('fs')
 
 notes.get('/', (req, res) => {
 
  readFromFile('./db/notes.json').then((data) => res.json(JSON.parse(data)));
 });
 
-// POST Route for submitting feedback
 notes.post('/', (req, res) => {
     // Log that a POST request was received
     console.info(`${req.method} request received to submit note`);
@@ -38,9 +39,28 @@ notes.post('/', (req, res) => {
   });
 
 notes.delete('/:id', (req, res) => {
+   const noteToDelete = req.params.id
+   console.log(noteToDelete)
 
+    fs.readFile('./db/notes.json', (err,data) => {
 
+        if (err) throw err;
+
+        noteData = JSON.parse(data);
+
+        for (let index = 0; index < noteData.length; index++) {
+            if(noteData[index].id == (noteToDelete)) {
+                noteData.splice([index], 1);
+              }
+        }
+
+        minusDeletedData = JSON.stringify(noteData)
+
+        fs.writeFile('./db/notes.json', minusDeletedData, (err, data) => {
+            if (err) throw err;
+          });
+        });
+        res.json("Deleted Successfully")
 })
  
-//   DELETE /api/notes/:id  
 module.exports = notes;
