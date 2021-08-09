@@ -1,6 +1,7 @@
 # Note Taker
 
 ![MIT](https://img.shields.io/badge/MIT-Licensed-green)
+https://note-taker-lukert.herokuapp.com/
 
 ## Description
 A note taker application using express JS, deployed to heroku that accepts post, get and delete requests in order to store and display notes.
