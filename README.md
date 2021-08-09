@@ -1,6 +1,6 @@
 # Note Taker
 
-![MIT](https://img.shields.io/badge/MIT-Licensed-green)
+![MIT](https://img.shields.io/badge/MIT-Licensed-green)  
 https://note-taker-lukert.herokuapp.com/
 
 ## Description
