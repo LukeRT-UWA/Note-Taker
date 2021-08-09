@@ -17,7 +17,7 @@ A note taker application using express JS, deployed to heroku that accepts post,
 This location can be cloned and run locally on port 3001 or via the deployed Heroku Link.
 
 ## Usage
-Navigate to deployed heroku link.
+https://user-images.githubusercontent.com/84198206/128676185-655c7aa0-3f47-46b1-a576-c44cbd151455.mp4
 
 ## License
 MIT
