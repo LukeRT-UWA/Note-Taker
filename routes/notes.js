@@ -52,11 +52,11 @@ notes.delete('/:id', (req, res) => {
             if(noteData[index].id == (noteToDelete)) {
                 noteData.splice([index], 1);
               }
-        }
+        } 
 
         minusDeletedData = JSON.stringify(noteData)
 
-        fs.writeFile('./db/notes.json', minusDeletedData, (err, data) => {
+        fs.writeFileSync('./db/notes.json', minusDeletedData, (err, data) => {
             if (err) throw err;
           });
         });
